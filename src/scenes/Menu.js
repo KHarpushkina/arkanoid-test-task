@@ -72,10 +72,6 @@ export class Menu extends Phaser.Scene {
         // getting unlockedLevel from localStorage
         this.unlockedLevel = getHighestUnlockedLevel();
 
-        if (!this.unlockedLevel) {
-            setHighestUnlockedLevel(1);
-        }
-
         this.isMobile = this.scale.parentSize.width < 768;
 
         const topTextGap = 150;

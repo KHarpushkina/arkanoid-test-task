@@ -8,7 +8,7 @@ export const getHighestUnlockedLevel = () => {
     const value = Number(localStorage.getItem("highestUnlockedLevel"));
 
     if (!Number.isInteger(value)) {
-        return 1;
+        setHighestUnlockedLevel(1);
     }
 
     return Phaser.Math.Clamp(value, 1, levelsCount);
