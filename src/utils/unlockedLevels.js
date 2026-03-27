@@ -1,4 +1,4 @@
-import { levelsCount } from "../constants";
+import { levelsCount } from "../constants/index.js";
 
 export const STORAGE_KEYS = {
     highestUnlockedLevel: "highestUnlockedLevel",
