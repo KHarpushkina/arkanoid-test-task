@@ -137,7 +137,7 @@ export const level5 = {
             METALL,
         ],
         [PURPLE, RED, RED, RED, RED, RED, RED, RED, RED, PURPLE],
-        [PURPLE, RED, METALL, null, null, null, null, METALL, RED, PURPLE],
+        [PURPLE, RED, ORANGE, null, null, null, null, ORANGE, RED, PURPLE],
         [PURPLE, RED, null, ROSE, RED, RED, ROSE, null, RED, PURPLE],
         [PURPLE, RED, RED, RED, METALL, METALL, RED, RED, RED, PURPLE],
         [METALL, ROSE, METALL, null, null, null, null, METALL, ROSE, METALL],
