@@ -1,4 +1,4 @@
-import { createMessageScreen } from "../ui/MessageScreen.js";
+import { createBackgroundImage, createMessageScreen } from "../ui/index.js";
 
 export class GameOver extends Phaser.Scene {
     constructor() {
@@ -12,6 +12,8 @@ export class GameOver extends Phaser.Scene {
     }
 
     create() {
+        createBackgroundImage(this);
+
         const { actionButton } = createMessageScreen(this, {
             messageText: "GAME OVER",
             actionButtonText: "Restart level",

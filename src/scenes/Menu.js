@@ -1,10 +1,9 @@
-import { levelsCount } from "../constants/levels.js";
+import { levelsCount, TEXT_COLORS } from "../constants/index.js";
 import {
     getHighestUnlockedLevel,
     setHighestUnlockedLevel,
-} from "../utils/unlockedLevels.js";
-import { createButton } from "../ui/Button.js";
-import { TEXT_COLORS } from "../constants/styleVariables.js";
+} from "../utils/index.js";
+import { createButton, createBackgroundImage } from "../ui/index.js";
 
 export class Menu extends Phaser.Scene {
     constructor() {
@@ -18,6 +17,7 @@ export class Menu extends Phaser.Scene {
     createLevelButtons() {
         this.levelsGrid = this.add.container(0, 0);
 
+        // display levels grid in 3 cols if it is mobile screen, in other case - in 5
         const cols = this.isMobile ? 3 : 5;
 
         const buttonWidth = 80;
@@ -52,7 +52,7 @@ export class Menu extends Phaser.Scene {
                     });
                 });
             } else {
-                button.setAlpha(0.35)
+                button.setAlpha(0.35);
             }
 
             this.levelsGrid.add(button);
@@ -67,6 +67,9 @@ export class Menu extends Phaser.Scene {
     }
 
     create() {
+        createBackgroundImage(this);
+
+        // getting unlockedLevel from localStorage
         this.unlockedLevel = getHighestUnlockedLevel();
 
         if (!this.unlockedLevel) {

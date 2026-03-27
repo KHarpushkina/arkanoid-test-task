@@ -1,4 +1,4 @@
-import { BUTTON_COLORS , BORDER_VALUE } from "../constants/styleVariables.js";
+import { SOUNDS, BUTTON_COLORS, BORDER_VALUE } from "../constants/index.js";
 
 export function createButton(
     scene,
@@ -30,6 +30,12 @@ export function createButton(
 
     button.on("pointerover", () => bg.setFillStyle(hoverColor));
     button.on("pointerout", () => bg.setFillStyle(fillColor));
+
+    button.on("pointerdown", () => {
+        scene.sound.play(SOUNDS.BUTTON_CLICK, {
+            volume: 0.3,
+        });
+    });
 
     return { button };
 }

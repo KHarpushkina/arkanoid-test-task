@@ -1,7 +1,7 @@
 import { createButton } from "../ui/Button.js";
 import { GAME_OVER_COLORS, TEXT_COLORS } from "../constants/styleVariables.js";
 
-export function createMessageScreen(scene, { messageText, actionButtonText }) {
+export function createMessageScreen(scene, { messageText, messageTextFont = 64, actionButtonText }) {
     const buttonWidth = 300;
     const buttonHeight = 70;
     const topTextGap = 150;
@@ -13,7 +13,7 @@ export function createMessageScreen(scene, { messageText, actionButtonText }) {
             topTextGap + 4,
             "fontBitmap",
             messageText,
-            64,
+            messageTextFont,
         )
         .setOrigin(0.5)
         .setTint(TEXT_COLORS.shadow)
@@ -25,7 +25,7 @@ export function createMessageScreen(scene, { messageText, actionButtonText }) {
             topTextGap,
             "fontBitmap",
             messageText,
-            64,
+            messageTextFont,
         )
         .setOrigin(0.5);
 

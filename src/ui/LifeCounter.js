@@ -1,4 +1,4 @@
-import { MENU_COLORS, BORDER_VALUE } from "../constants/styleVariables.js";
+import { SPRITESHEETS } from "../constants/index.js";
 
 export function createLifeCounter(scene, { x, y, restLivesCount = 3 }) {
     const allLivesCount = 3;
@@ -19,7 +19,7 @@ export function createLifeCounter(scene, { x, y, restLivesCount = 3 }) {
         const heart = scene.add.image(
             startX + i * padding,
             y,
-            "hearts_sprites",
+            SPRITESHEETS.HEARTS_SPRITES,
             frame,
         );
 
