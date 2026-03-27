@@ -5,17 +5,19 @@ export const STORAGE_KEYS = {
 };
 
 export const getHighestUnlockedLevel = () => {
-    const value = Number(localStorage.getItem("highestUnlockedLevel"));
+    let value = Number(localStorage.getItem("highestUnlockedLevel"));
 
-    if (!value || !Number.isInteger(value) || value < 1) {
+    if (!Number.isInteger(value) || value < 1) {
+        value = 1;
         setHighestUnlockedLevel(1);
     }
 
     if (value > levelsCount) {
-        setHighestUnlockedLevel(value);
+        value = 5;
+        setHighestUnlockedLevel(5);
     }
 
-    return Phaser.Math.Clamp(value, 1, levelsCount);
+    return value;
 };
 
 export const setHighestUnlockedLevel = (level) => {
